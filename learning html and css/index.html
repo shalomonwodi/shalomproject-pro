@@ -1,0 +1,330 @@
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Background Gradient and Smooth Transition */
+        header {
+            background: linear-gradient(135deg, #FF6F61, #FF9A8B, #FF1A4A);
+            color: #fff;
+            padding: 120px 20px;
+            text-align: center;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 2s ease-in-out;
+            position: relative;
+        }
+
+        /* Animated Header Text */
+        header h1 {
+            font-size: 4em;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            animation: typing 3.5s steps(40) 1s forwards, bounce 1s ease-in-out infinite;
+            display: inline-block;
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 4px solid #fff;
+        }
+
+        @keyframes typing {
+            0% {
+                width: 0;
+            }
+            100% {
+                width: 100%;
+            }
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        /* Navigation Bar */
+        nav {
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 20px 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 10;
+            transition: all 0.5s ease;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 25px;
+            font-size: 1.3em;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #FF6F61;
+            transform: translateY(-5px);
+        }
+
+        /* Page Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 180px 20px 40px; /* Added more top padding to accommodate fixed nav */
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        /* Section Titles */
+        .section-title {
+            font-family: 'Open Sans', sans-serif;
+            text-align: center;
+            font-size: 3em;
+            color: #2C3E50;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        /* Skills, Projects, and Contact Section */
+        .skills, .projects, .contact {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        /* Card Styling */
+        .skill, .project, .contact-item {
+            background-color: #fff;
+            padding: 40px;
+            margin: 15px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            width: 30%;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Hover Effects for Cards */
+        .skill:hover, .project:hover, .contact-item:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
+            background-color: #FF6F61;
+            color: #fff;
+        }
+
+        .project img {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Neon Glow on Hover */
+        .neon-hover:hover {
+            text-shadow: 0 0 10px #FF6F61, 0 0 20px #FF6F61, 0 0 30px #FF6F61;
+            transform: translateY(-5px);
+        }
+
+        /* Contact Section Style */
+        .contact-item a {
+            color: #fff;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            color: #FF6F61;
+            text-shadow: 0 0 10px #FF6F61, 0 0 20px #FF6F61;
+        }
+
+        footer {
+            background-color: #2C3E50;
+            color: #fff;
+            text-align: center;
+            padding: 30px 20px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            font-size: 1.2em;
+            margin-top: 50px;
+        }
+
+        /* Fade In Animation */
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            .skills, .projects {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .skill, .project, .contact-item {
+                width: 100%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Welcome to My Portfolio
+  
+</header>
+
+<nav>
+    <a href="#about">About Me</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<div class="container">
+    <section id="about">
+        <h2 class="section-title">About Me</h2>
+        <h2>Hello! My Shalom Onwodi and i am a web developer with a love for coding and problem-solving. I specialize in front-end development and enjoy creating beautiful and user-friendly websites.</h2>
+    </section>
+
+    
+
+    <img src="cool pic.jpg" alt="">
+
+    <section id="skills">
+        <h2 class="section-title">Skills</h2>
+        <div class="skills">
+            <div class="skill">
+
+                
+                <h3>PROGRAMMING LANGUAGES</h3>
+                <p>Building structured and semantic websites. Proficient in CSS, Python, HTML, Java.</p>
+            </div>
+            <div class="skill">
+                <h3>WEB DEVELOPMENT</h3>
+                <p>Creating beautiful layouts and designs. And Exprienced in creating dynamic and responsive website using HTML, CSS, and JavaScript.</p>
+            </div>
+            <div class="skill">
+                <h3>BACKEND DEVELOPMENT</h3>
+                <p>Skilled in database management and integration, utilizing firebase and SQL.</p>
+            </div>
+        </div>
+    </section>
+
+    <style>
+       button{
+        background-color: #FF6F61;
+        color: #f4f4f9;
+        border: none;
+        height: 60px;
+        width: 500px;
+        border-radius: 30px;
+        cursor: pointer;
+
+
+
+       }
+
+
+
+
+    </style>
+
+    
+
+    <button type="button" onclick="location.href='https://about-shalom-onwodi.my.canva.site/'"> MY CV</button>
+
+       
+    <section id="projects">
+        <h2 class="section-title">Projects</h2>
+        <div class="projects">
+            <div class="project">
+                <h3> CANVAS MAKING</h3>
+                <img src="WhatsApp Image 2024-12-19 at 19.20.23_e87c4140.jpg" alt="" width="300px" height="10px">
+
+                <a href="https://about-shalom-onwodi.my.canva.site/" link to my canvas></a>
+
+                <p>Project description goes here. It's a great project that I worked on to showcase my skills.</p>
+            </div>
+            <div class="project">
+                <h3>Project 2</h3>
+                <img src="images/project2.jpg" alt="Project 2 Image">
+                <p>Project description goes here. It's a great project that I worked on to showcase my skills.</p>
+            </div>
+            <div class="project">
+                <h3>Project 3</h3>
+                <img src="images/project3.jpg" alt="Project 3 Image">
+                <p>Project description goes here. It's a great project that I worked on to showcase my skills.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2 class="section-title">Contact </h2>
+        <div class="contact">
+            <div class="contact-item">
+                <h3>Email</h3>
+                <p>shalomonwodi2004@gmail.com
+            </div>
+            <div class="contact-item">
+                <h3>Phone</h3>
+                <p>+234 9027499431
+            </div>
+
+
+
+
+            <div class="contact-item">
+                <h3>Address
+                <p><a href="">39 olutosin ajayi street, Ajao Estate Lagos.
+            </div>
+        </div>
+    </section>
+</div>
+
+    
+
+<footer>
+    <p>&copy; 2024. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
+
+
+
